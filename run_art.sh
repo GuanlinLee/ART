@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # path to the llava lora
-LLAVA_LORA_PATH="" # path to the llava lora
+LLAVA_LORA_PATH="glli/ART_GuideModel" # path to the llava lora
 LLAVA_MODEL_PATH="liuhaotian/llava-v1.6-mistral-7b"
 
 # path to the llama lora
-LLAMA_LORA_PATH="" # path to the llama lora
-LLAMA_MODEL_PATH="" # path to the llama 2 7b model
+LLAMA_LORA_PATH="glli/ART_WriterModel" # path to the llama lora
+LLAMA_MODEL_PATH="meta-llama/Llama-2-7b-hf" # path to the llama 2 7b model
 
 SD_VERSION="1.5"
 SEED=1234
