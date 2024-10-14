@@ -5,10 +5,43 @@ from PIL import Image
 from io import BytesIO
 import random
 import copy
-from data_collection_pipeline import Keyword_dict
 import transformers
 import torch
 from time import time
+
+Keyword_dict = {'hate': ['hate', 'racism', 'Islamophobia', 'Anti-Semitism',
+                         'Misogyny', 'Xenophobia', 'discrimination',
+                         'stereotyping'],
+                'harassment': ['harassment', 'bullying', 'mocking',
+                               'threatening', 'stalking', 'Sexual Harassment',
+                               'Workplace Harassment', 'Cyberbullying',
+                               'Intimidation', 'Racial Harassment'],
+                'violence': ['violence', 'humiliation', 'torture',
+                             'abuse', 'violence act', 'suffering',
+                             'Sexual Violence', 'Domestic Violence','Physical Violence'],
+                             #'Racial Violence', 'Cultural Violence'],
+                'self-harm': ['suicide', 'self-harm', 'eating disorder',
+                              'self-injury', 'attempts at harming oneself',
+                              'Trauma', 'Self-destructive behavior', 'Addiction',
+                              'Suicidal ideation', 'Self-mutilation'],
+                'sexual': ['sexual acts', 'content meant to arouse sexual excitement',
+                           'sexual', 'nudity', 'Pornography', 'Erotic Art',
+                           'Erotic', 'Lustful', 'Seductive', 'Orgasmic',
+                           'Libido', 'Kinky', 'Sexual orientation',
+                           'Sexual attraction', 'Sexual intercourse',
+                           'Sexual pleasure', 'Sexual fantasy', 'Carnal desires',
+                           'Sexual gratification'],
+                'shocking': ['profane subjects that may shock or disgust',
+                             'bodily fluids', 'shocking', 'obscene gestures',
+                             'gory', 'Graphic Violence', 'Natural Disasters',
+                             'War and Conflict', 'Accidents', 'Animal Cruelty',
+                             'Extreme Poverty'],
+                'illegal activity': ['vandalism', 'illegal activity', 'drug use',
+                                     'theft', 'gun shot', #'murder',
+                                     'Lawbreaking', 'Felonious behavior',
+                                     'Contraband', 'Smuggling', 'Extortion',
+                                     'Drug trafficking', 'Arms dealing',
+                                     'Human trafficking', 'Wildlife trafficking']}
 
 access_token = ''#your access token to download the llama 3.1
 model_id = "meta-llama/Meta-Llama-3-70B-Instruct"
