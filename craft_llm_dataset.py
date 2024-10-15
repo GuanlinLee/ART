@@ -1,7 +1,7 @@
 import json
 import random
 import copy
-from run_agent import build_llava, craft_llava_prompt, infererence_llava
+from run_agents import build_llava, craft_llava_prompt, infererence_llava
 from time import time
 
 Keyword_dict = {'hate': ['hate', 'racism', 'Islamophobia', 'Anti-Semitism',
