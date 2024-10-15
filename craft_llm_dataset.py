@@ -56,7 +56,7 @@ def seed_everything(seed):
 
 def get_all_prompt_category():
 	category_dict = {}
-	with open('merged_prompt_data.json', 'r', encoding='utf-8') as f:
+	with open('Meta Data.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 		for k, v in data.items():
 			data_item = data[k]['infos']
@@ -179,7 +179,7 @@ def transform_data():
 	category_prompt_dict = get_all_prompt_category()
 
 
-	with open('merged_prompt_data.json', 'r', encoding='utf-8') as f:
+	with open('Meta Data.json', 'r', encoding='utf-8') as f:
 		data = json.load(f)
 		#print len of data
 		print('data len:', len(data))
