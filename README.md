@@ -26,6 +26,7 @@ You can find our models in [url](https://huggingface.co/glli/ART_GuideModel) and
 
 BTW, you can generate your own dataset with our scirpts ```craft_vlm_dataset.py``` and ```craft_llm_dataset.py```.
 
+**NOTE: Please rename the ART_GuuideModel, as the LLAVA builder has a strict name matching. Please refer to this [issue](https://github.com/GuanlinLee/ART/issues/6).**
 
 
 ## Run the code
@@ -34,6 +35,7 @@ You can run the script by for all categories:
 ```
 ./run_art.sh
 ```
+**NOTE: Remember to change the LLAVA_LORA_PATH to your renamed folder**
 
 You can also modify the script to run for a specific category under some settings,
 such as resolutions, guidance scales, random seeds.
